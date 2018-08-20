@@ -36,10 +36,12 @@ class EventButton extends React.Component {
   }
 
   sendGAEvent(label) {
+    var label_text = label;
+
     gtag('event', 'Click', {
       'send_to': 'UA-124268690-1',
       'event_category': 'Button Click',
-      'event_label': label,
+      'event_label': label_text,
       'value': ''
     });
   }
