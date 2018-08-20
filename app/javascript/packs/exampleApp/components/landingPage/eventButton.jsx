@@ -12,7 +12,8 @@ class EventButton extends React.Component {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
-    this.sendGAEvent(this.labelText(this.state.isToggleOn))
+    var text = this.labelText()
+    this.sendGAEvent(text);
   }
 
   render() {
@@ -31,17 +32,19 @@ class EventButton extends React.Component {
     return (<span>Unlike &#x1f44e;</span>)
   }
 
-  labelText(toggle_state) {
-    toggle_state? 'Like' : 'Unlike'
+  labelText() {
+    return (
+      this.state.isToggleOn ? 'Like' : 'Unlike'
+    )
   }
 
   sendGAEvent(label) {
-    var label_text = label;
+    console.log(`***** SENDING ${label} BUTTON CLICK EVENT TO GA *****`);
 
     gtag('event', 'Click', {
       'send_to': 'UA-124268690-1',
       'event_category': 'Button Click',
-      'event_label': label_text,
+      'event_label': `${label}`,
       'value': ''
     });
   }
