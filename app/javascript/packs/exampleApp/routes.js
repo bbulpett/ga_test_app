@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom'
-import LandingPage from './components/landingPage';
+import LandingPage from './components/landingPage'
+
 const App = (props) => (
   <Router>
     <div>
@@ -11,4 +12,5 @@ const App = (props) => (
     </div>
   </Router>
 )
-export default App;
+
+export default App

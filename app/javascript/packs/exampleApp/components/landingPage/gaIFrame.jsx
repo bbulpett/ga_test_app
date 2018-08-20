@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 class GAIFrame extends React.Component {
   constructor(props) {

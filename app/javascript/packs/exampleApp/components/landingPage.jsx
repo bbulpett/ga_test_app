@@ -1,6 +1,7 @@
-import React from 'react';
-import EventButton from './landingPage/eventButton';
-import GAIFrame from './landingPage/gaIFrame';
+import React from 'react'
+import EventButton from './landingPage/eventButton'
+import GAIFrame from './landingPage/gaIFrame'
+import Link from './landingPage/link'
 
 class LandingPage extends React.Component {
   render() {
@@ -12,6 +13,10 @@ class LandingPage extends React.Component {
           <EventButton type='unlike' />
         </div>
         <GAIFrame />
+        <Link
+          linkMessage='(The code for this is here)'
+          linkRef='https://github.com/bbulpett/ga_test_app'
+        />
       </div>
     )
   }
