@@ -35,11 +35,11 @@ class EventButton extends React.Component {
     toggle_state? 'Like' : 'Unlike'
   }
 
-  sendGAEvent() {
+  sendGAEvent(label) {
     gtag('event', 'Click', {
       'send_to': 'UA-124268690-1',
       'event_category': 'Button Click',
-      'event_label': 'test',
+      'event_label': label,
       'value': ''
     });
   }
