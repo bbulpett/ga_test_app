@@ -1,17 +1,7 @@
 import React from 'react';
 
 class EventButton extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {isToggleOn: true}
-
-    this.handleClick = this.handleClick.bind(this)
-  }
-
   handleClick() {
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
-    }));
     var text = this.labelText()
     this.sendGAEvent(text)
   }
@@ -20,7 +10,7 @@ class EventButton extends React.Component {
     return (
       <div>
         <button onClick={this.handleClick}>
-          {this.state.isToggleOn ? this.likeText() : this.unlikeText()}
+          {this.props.type === 'like' ? this.likeText() : this.unlikeText()}
         </button>
       </div>
     );
@@ -36,7 +26,7 @@ class EventButton extends React.Component {
 
   labelText() {
     return (
-      this.state.isToggleOn ? 'Like' : 'Unlike'
+      this.props.type.replace(/^\w/, c => c.toUpperCase())
     )
   }
 

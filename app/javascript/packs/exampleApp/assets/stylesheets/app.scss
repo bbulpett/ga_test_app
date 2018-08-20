@@ -9,5 +9,10 @@ h1 {
 }
 
 iframe {
-  margin: 50px auto;
+  margin: 50px 0 50px -30px;
+}
+
+.buttonRow * {
+  display: inline;
+  margin: 0 10px;
 }

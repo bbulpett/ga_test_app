@@ -7,7 +7,10 @@ class LandingPage extends React.Component {
     return(
       <div>
         <h1>Google Analytics Test App</h1>
-        <EventButton />
+        <div className='buttonRow'>
+          <EventButton type='like' />
+          <EventButton type='unlike' />
+        </div>
         <GAIFrame />
       </div>
     )
