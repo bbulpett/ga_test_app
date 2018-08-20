@@ -2,7 +2,7 @@ import React from 'react';
 
 class EventButton extends React.Component {
   handleClick() {
-    var text = this.labelText()
+    var text = this.props.type.replace(/^\w/, c => c.toUpperCase())
     this.sendGAEvent(text)
   }
 
@@ -22,12 +22,6 @@ class EventButton extends React.Component {
 
   unlikeText() {
     return (<span>Unlike &#x1f44e;</span>)
-  }
-
-  labelText() {
-    return (
-      this.props.type.replace(/^\w/, c => c.toUpperCase())
-    )
   }
 
   sendGAEvent(label) {
