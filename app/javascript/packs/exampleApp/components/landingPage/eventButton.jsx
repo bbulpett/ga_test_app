@@ -2,10 +2,10 @@ import React from 'react';
 
 class EventButton extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {isToggleOn: true};
+    super(props)
+    this.state = {isToggleOn: true}
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
@@ -13,14 +13,16 @@ class EventButton extends React.Component {
       isToggleOn: !prevState.isToggleOn
     }));
     var text = this.labelText()
-    this.sendGAEvent(text);
+    this.sendGAEvent(text)
   }
 
   render() {
     return (
-      <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? this.likeText() : this.unlikeText()}
-      </button>
+      <div>
+        <button onClick={this.handleClick}>
+          {this.state.isToggleOn ? this.likeText() : this.unlikeText()}
+        </button>
+      </div>
     );
   }
 
@@ -39,14 +41,12 @@ class EventButton extends React.Component {
   }
 
   sendGAEvent(label) {
-    console.log(`***** SENDING ${label} BUTTON CLICK EVENT TO GA *****`);
-
     gtag('event', 'Click', {
       'send_to': 'UA-124268690-1',
       'event_category': 'Button Click',
       'event_label': `${label}`,
       'value': ''
-    });
+    })
   }
 }
 
