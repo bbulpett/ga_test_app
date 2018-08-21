@@ -19,7 +19,7 @@ class EventButton extends React.Component {
           {this.props.type === 'like' ? this.likeText() : this.unlikeText()}
         </button>
       </div>
-    );
+    )
   }
 
   likeText() {

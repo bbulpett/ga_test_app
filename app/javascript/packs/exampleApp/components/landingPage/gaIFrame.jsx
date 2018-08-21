@@ -1,16 +1,23 @@
 import React from 'react'
 
 class GAIFrame extends React.Component {
-  constructor(props) {
+  constructor(props){
     super(props)
-    this.state = {iframeKey: 0};
+
+    this.state = { time: Date.now() }
   }
 
   componentDidMount() {
-    setInterval(function(){
-      this.forceUpdate()
-      console.log("**** RELOADING IFRAME ****")
-    }.bind(this), 5000)
+    console.log("**** UPDATING IFRAME ****")
+    this.interval = setInterval(() => this.setState({ time: Date.now() }), 10000)
+  }
+
+  componentWillUnmount() {
+    this.clearInterval(this.interval)
+  }
+
+  tick() {
+    this.count++
   }
 
   render() {
@@ -19,7 +26,6 @@ class GAIFrame extends React.Component {
         <iframe
           width="600"
           height="480"
-          key={this.state.iframeKey}
           src="https://datastudio.google.com/embed/reporting/1jxWBSZRjNGDj3bAxCGmFWuzmP0DVzueZ/page/0S4W"
           frameBorder="0"
           style={{border:0}}
