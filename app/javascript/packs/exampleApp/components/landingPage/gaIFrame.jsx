@@ -16,13 +16,9 @@ class GAIFrame extends React.Component {
     this.clearInterval(this.interval)
   }
 
-  tick() {
-    this.count++
-  }
-
   render() {
     return (
-      <div>
+      <div className={'ifr'}>
         <iframe
           width="600"
           height="480"
