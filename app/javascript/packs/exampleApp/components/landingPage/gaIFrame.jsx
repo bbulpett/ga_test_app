@@ -26,6 +26,7 @@ class GAIFrame extends React.Component {
         <iframe
           width="600"
           height="480"
+          key={this.state.time}
           src="https://datastudio.google.com/embed/reporting/1jxWBSZRjNGDj3bAxCGmFWuzmP0DVzueZ/page/0S4W"
           frameBorder="0"
           style={{border:0}}
